@@ -13,16 +13,16 @@
     <body class="bg-secondary">
         <form class="offset-4 w-25 border p-3 mt-5 bg-dark" method="post">
             <h4 class="text-white">Form Validation Button Disable</h4>
-            <input type="text" id="fname" name="fname" class="form-control mt-4" placeholder="Please Enter Your First Name" value="" onkeydown="handleChange()"/><span id="fn" class="" style="color:red;"></span>
-            <input type="text" id="lname" name="lname" class="form-control mt-4" placeholder="Please Enter Your Last Name" value="" onkeydown="handleChange()" /><span id=ln class="" style="color:red;"></span>
-            <input type="email" id="email" name="email" class="form-control mt-4" placeholder="Please Enter Your Email" value="" onkeydown="handleChange()" /><span id="em" class="" style="color:red;"></span>
-            <input type="password" id="password" name="password" class="form-control mt-4" placeholder="Please Enter Your Password" value="" onkeydown="handleChange()" /><span id="ps" class="" style="color:red;"></span>
-            <input type="password" id="con_password" name="con_password" class="form-control mt-4" placeholder="Please Enter Your Confirm Password" value="" onkeydown="handleChange()" /><span id="co_ps" class="" style="color:red;"></span><br />
+            <input type="text" id="fname" name="fname" class="form-control mt-4" placeholder="Please Enter Your First Name" value="" /><span id="fn" class="" style="color:red;"></span>
+            <input type="text" id="lname" name="lname" class="form-control mt-4" placeholder="Please Enter Your Last Name" value=""  /><span id=ln class="" style="color:red;"></span>
+            <input type="email" id="email" name="email" class="form-control mt-4" placeholder="Please Enter Your Email" value=""  /><span id="em" class="" style="color:red;"></span>
+            <input type="password" id="password" name="password" class="form-control mt-4" placeholder="Please Enter Your Password" value=""  /><span id="ps" class="" style="color:red;"></span>
+            <input type="password" id="con_password" name="con_password" class="form-control mt-4" placeholder="Please Enter Your Confirm Password" value=""  /><span id="co_ps" class="" style="color:red;"></span><br />
             <input type="radio" class="offset-2 " name="gender" />
             <label for="gender" class="text-white">Female</label><br />
             <input type="radio" class="offset-2" name="gender" />
             <label for="gender" class="text-white">Male</label><br /><br />
-            <button type="button" id="sub" class="offset-4 btn btn-success" onclick="mySubForm()" name="Save">Submit Form</button>
+            <button type="button" id="sub" class="offset-4 btn btn-success" onclick="ValidateEmail()" name="Save">Submit Form</button>
         </form>
 
         <script>
@@ -42,43 +42,133 @@
             let co_ps = document.getElementById('co_ps');
 
 
-               let handleChange = ()=>{
-                    //console.log("change");
-                    if((fname.value) !== ""){
-                        fn.innerHTML="";
-                    }else if(fname.value == ""){
-                        fn.innerHTML = "Please Enter your First Name";
-                    }if(lname.value !== ""){
-                        ln.innerHTML = "";
-                    }else{
-                        ln.innerHTML = "Please Enter your Last Name";
-                    }if(email.value !== ""){
-                        em.innerHTML = "";
-                    }else{
-                        em.innerHTML = "Please Enter your Email";
-                    }if(password.value !== ""){
-                        ps.innerHTML = "";
-                    }else{
-                        ps.innerHTML = "Please Enter your Password";
-                    }if(con_password.value !== ""){   
-                        co_ps.innerHTML = "";
-                    }else{
-                        co_ps.innerHTML = "Please Enter your Confirm Password";
+            //    let handleChange = ()=>{
+            //         //console.log("change");
+            //         if((fname.value) !== ""){
+            //             fn.innerHTML="";
+            //         }else if(fname.value == ""){
+            //             fn.innerHTML = "Please Enter your First Name";
+            //         }if(lname.value !== ""){
+            //             ln.innerHTML = "";
+            //         }else{
+            //             ln.innerHTML = "Please Enter your Last Name";
+            //         }if(email.value !== ""){
+            //             em.innerHTML = "";
+            //         }else{
+            //             em.innerHTML = "Please Enter your Email";
+            //         }if(password.value !== ""){
+            //             ps.innerHTML = "";
+            //         }else{
+            //             ps.innerHTML = "Please Enter your Password";
+            //         }if(con_password.value !== ""){   
+            //             co_ps.innerHTML = "";
+            //         }else{
+            //             co_ps.innerHTML = "Please Enter your Confirm Password";
+            //         }
+            //     }
+            //     if(!fname.value){
+            //         console.log("enter");
+            //     }else if(!numeregex.test(fname.value)){
+            //         console.log(" match")
+            //     }else{
+            //         fn.innerHTML = "Please Enter only Alphabates"
+            //     }
+            function ValidateEmail()
+            {
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(email.value.match(mailformat))
+                {
+                    //alert("Valid email address!");
+                    //document.form1.text1.focus();
+                    return true;
+                    em.innerHTML =""
                     }
+                else
+                {
+                    em.innerHTML ="You have entered an invalid email address!";
+                    //document.form1.text1.focus();
+                    return false;
                 }
-                if(!fname.value){
-                    console.log("enter");
-                }else if(!numeregex.test(fname.value)){
-                    console.log(" match")
-                }else{
-                    fn.innerHTML = "Please Enter only Alphabates"
-                }
-                let mySubForm = ()=>{
-                    //console.log("submited");
-                   
-                }
+                
+            }
 
             
         </script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>JavaScript form validation - checking email</title>
+    <link rel='stylesheet' href='form-style.css' type='text/css' />      
+    </head>
+    <body onload='document.form1.text1.focus()'>
+        <div class="mail">
+            <h2>Input an email and Submit</h2>
+            <form name="form1" action="#">     
+                <input type='text' name='text1'/><br /><br />
+                <input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/>&nbsp;
+            </form>
+        </div>
+        <script>
+            function ValidateEmail(inputText)
+            {
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(inputText.value.match(mailformat))
+                {
+                    alert("Valid email address!");
+                    document.form1.text1.focus();
+                    return true;
+                    }
+                else
+                {
+                    alert("You have entered an invalid email address!");
+                    document.form1.text1.focus();
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html> -->
