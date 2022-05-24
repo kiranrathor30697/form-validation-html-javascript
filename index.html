@@ -19,7 +19,7 @@
         <input type="email" id="email" name="email" class="form-control mt-4" placeholder="Please Enter Your Email" onkeyup="handleChange()" /><span id="em" class="" style="color:red;"></span>
         <input type="password" id="password" name="password" class="form-control mt-4" placeholder="Please Enter Your Password" onkeyup="handleChange()" /><span id="ps" class="" style="color:red;"></span>
         <input type="password" id="con_password" name="con_password" class="form-control mt-4" placeholder="Please Enter Your Confirm Password" onkeyup="handleChange()" /><span id="co_ps" class="" style="color:red;"></span><br />
-        <input type="radio" class="offset-2 " name="gender" checked />
+        <input type="radio" class="offset-2 " name="gender" />
         <label for="gender">Female</label><br />
         <input type="radio" class="offset-2" name="gender" />
         <label for="gender">Male</label><br /><br />
@@ -60,42 +60,53 @@
         //alert("okoko");
         e.preventDefault();
         
-           if((fname.value && lname.value && email.value && password.value && con_password.value) == ""){
-            fn.innerHTML = "Please Enter your First Name";
-            ln.innerHTML = "Please Enter your Last Name";
-            em.innerHTML = "Please Enter your Email";
-            ps.innerHTML = "Please Enter your Password";
-            co_ps.innerHTML = "Please Enter your Confirm Password";
+        //    if((fname.value && lname.value && email.value && password.value && con_password.value) == ""){
+        //     // fn.innerHTML = "Please Enter your First Name";
+        //     // ln.innerHTML = "Please Enter your Last Name";
+        //     // em.innerHTML = "Please Enter your Email";
+        //     // ps.innerHTML = "Please Enter your Password";
+        //     // co_ps.innerHTML = "Please Enter your Confirm Password";
             
 
-            }
-        //else if(fname.value == ""){
-        //        //alert("Please Enter your First Name")
-        //        fn.innerHTML = "Please Enter your First Name";
-        //        return false;
-        //    }else if(lname.value == ""){
-        //     //    alert("Please Enter Your Last Name")
-        //        ln.innerHTML = "Please Enter your Last Name";
-        //        fn.remove();
-        //    }else if(email.value == ""){
-        //     //    alert("Please Enter Your Email")
-        //        em.innerHTML = "Please Enter your Email";
-        //        ln.remove();
-        //    }else if(password.value == ""){
-        //     //    alert("Please Enter Your Password")
-        //        ps.innerHTML = "Please Enter your Password";
-        //        em.remove();
-        //    }else if(con_password.value == ""){
-        //     //    alert("Please Enter Your Confirm Password")
-        //        co_ps.innerHTML = "Please Enter your Confirm Password";
-        //        ps.remove();
-        //        if((password.value !== con_password) && (con_password.value !== "") ){
-        //         // alert("Not Match The Pasword")
-        //         fn.innerHTML = "Not Match Password!";
-        //        }
-        //    }else{
-        //        co_ps.remove();
-        //    }
+        //     }
+        // else 
+                fn.innerHTML = "Please Enter your First Name";
+                ln.innerHTML = "Please Enter your Last Name";
+                em.innerHTML = "Please Enter your Email";
+                ps.innerHTML = "Please Enter your Password";
+                co_ps.innerHTML = "Please Enter your Confirm Password";
+            if(fname.value == ""){
+               //alert("Please Enter your First Name")
+               fn.innerHTML = "Please Enter your First Name";
+               return false;
+           }else if(lname.value == ""){
+            //    alert("Please Enter Your Last Name")
+               ln.innerHTML = "Please Enter your Last Name";
+               return false;
+               fn.remove();
+           }else if(email.value == ""){
+            //    alert("Please Enter Your Email")
+               em.innerHTML = "Please Enter your Email";
+               return false;
+               ln.remove();
+           }else if(password.value == ""){
+            //    alert("Please Enter Your Password")
+               ps.innerHTML = "Please Enter your Password";
+               return false;
+               em.remove();
+           }else if(con_password.value == ""){
+            //    alert("Please Enter Your Confirm Password")
+               co_ps.innerHTML = "Please Enter your Confirm Password";
+               return false;
+               ps.remove();
+               if((password.value !== con_password) && (con_password.value !== "") ){
+                // alert("Not Match The Pasword")
+                fn.innerHTML = "Not Match Password!";
+                
+               }
+           }else{
+               co_ps.remove();
+           }
        }
 
         
