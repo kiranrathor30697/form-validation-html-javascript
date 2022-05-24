@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Button Disable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--  onsubmit="return myFormValidation()" -->
+    <form class="offset-4 w-25 border p-3 mt-5" method="post">
+        <h4>Form Validation Button Disable</h4>
+        <input type="text" id="fname" name="fname" class="form-control mt-4" placeholder="Please Enter Your First Name" value="" onchange="handleChange()"/>
+        <input type="text" id="lname" name="lname" class="form-control mt-4" placeholder="Please Enter Your Last Name" value="" onchange="handleChange()" />
+        <input type="email" id="email" name="email" class="form-control mt-4" placeholder="Please Enter Your Email" value="" onchange="handleChange()" />
+        <input type="password" id="password" name="password" class="form-control mt-4" placeholder="Please Enter Your Password" value="" onchange="handleChange()" />
+        <input type="password" id="con_password" name="con_password" class="form-control mt-4" placeholder="Please Enter Your Confirm Password" value="" onchange="handleChange()" />
+        <input type="radio" class="offset-2 " name="gender" />
+        <label for="gender">Female</label><br />
+        <input type="radio" class="offset-2" name="gender" />
+        <label for="gender">Male</label><br /><br />
+        <button type="button" id="sub" class="offset-4 btn btn-success" onclick="mySubForm()" name="Save">Submit Form</button>
+    </form>
+    <script>
+
+        let fname = document.getElementById('fname');
+        let lname = document.getElementById('lname');
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let con_password = document.getElementById('con_password');
+        let mysub = document.getElementById("sub");
+        console.log(mysub);
+
+        console.log(fname.value);
+        console.log(lname.value);
+        console.log(email.value);
+
+
+        let handleChange = ()=>{
+           //let fn = fname.value;
+           //console.log(fn) 
+            console.log(fname.value);
+            console.log(lname.value);
+            console.log(email.value);
+            console.log(password.value);
+            console.log(con_password.value);
+           if(((fname.value) && (lname.value) && (email.value) && (password.value) && (con_password.value)) !== ""){
+                //mysub.disabled = true;
+                mysub.removeAttribute('disabled');
+            }
+        }
+
+        if((fname.value && lname.value && email.value && password.value && con_password.value) == ""){
+                //console.log("empty");
+               // mysub.disabled = false;
+               mysub.setAttribute('disabled', '');
+
+            }
+            // else if((fname.value && lname.value && email.value && password.value && con_password.value) !== ""){
+            //     //console.log("empty");
+            //    // mysub.disabled = false;
+            //    mysub.removeAttribute('disabled');
+            // }
+
+        let mySubForm =()=>{
+            console.log("okokokok");
+            
+        }
+
+        
+       
+    </script>
+</body>
+</html>
