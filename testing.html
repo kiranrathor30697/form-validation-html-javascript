@@ -104,18 +104,18 @@
                     // ps.innerHTML = "Please Enter your Password";
                     // co_ps.innerHTML = "Please Enter your Confirm Password";
 
-                    // let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-                    // if(email.value.match(mailformat))
-                    // {   
-                    //     em.innerHTML =""
-                    //     return true;
-                    //     }
-                    // else
-                    // {
-                    //     em.innerHTML ="You have entered an invalid email address!";
-                    //     //document.form1.text1.focus();
-                    //     return false;
-                    // }
+                    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                    if(email.value.match(mailformat))
+                    {   
+                        em.innerHTML =""
+                        return true;
+                        }
+                    else
+                    {
+                        em.innerHTML ="You have entered an invalid email address!";
+                        //document.form1.text1.focus();
+                        return false;
+                    }
 
                     
                     var passregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
