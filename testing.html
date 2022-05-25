@@ -41,60 +41,60 @@
 
                let handleChange = ()=>{
                     //console.log("change");
-                    if((fname.value) !== ""){
-                        fn.innerHTML="";
-                    }else if(fname.value == ""){
-                        fn.innerHTML = "Please Enter your First Name";
-                    }if(lname.value !== ""){
-                        ln.innerHTML = "";
-                    }else{
-                        ln.innerHTML = "Please Enter your Last Name";
-                    }if(email.value !== ""){
-                        em.innerHTML = "";
-                    }else{
-                        em.innerHTML = "Please Enter your Email";
-                    }if(password.value !== ""){
-                        ps.innerHTML = "";
-                    }else{
-                        ps.innerHTML = "Please Enter your Password";
-                    }if(con_password.value !== ""){ 
-                        if((password.value) == (con_password.value)){
-                            co_ps.innerHTML = "";
-                        }else{
-                            co_ps.innerHTML = "Not match password";
-                        }  
-                    }else{
-                        co_ps.innerHTML = "Please Enter your Confirm Password";
-                    }
+                    // if((fname.value) !== ""){
+                    //     fn.innerHTML="";
+                    // }else if(fname.value == ""){
+                    //     fn.innerHTML = "Please Enter your First Name";
+                    // }if(lname.value !== ""){
+                    //     ln.innerHTML = "";
+                    // }else{
+                    //     ln.innerHTML = "Please Enter your Last Name";
+                    // }if(email.value !== ""){
+                    //     em.innerHTML = "";
+                    // }else{
+                    //     em.innerHTML = "Please Enter your Email";
+                    // }if(password.value !== ""){
+                    //     ps.innerHTML = "";
+                    // }else{
+                    //     ps.innerHTML = "Please Enter your Password";
+                    // }if(con_password.value !== ""){ 
+                    //     if((password.value) == (con_password.value)){
+                    //         co_ps.innerHTML = "";
+                    //     }else{
+                    //         co_ps.innerHTML = "Not match password";
+                    //     }  
+                    // }else{
+                    //     co_ps.innerHTML = "Please Enter your Confirm Password";
+                    // }
                 }
                 
                 let mySubForm = ()=>{
 
-                    var passw=  /^[A-Za-z]\w{7,14}$/;
-                    if(password.value.match(passw)) 
-                    { 
-                        ps.innerHTML = "";
-                        return true;
-                    }
-                    else
-                    { 
-                        console.log("asdjhasdxahxgZx")
-                        ps.innerText == "Please Enter aphabets, Numberss, Special Charactors";
-                        return false;
-                        console.log("jawsdh")
-                    }
+                    // var passw=  /^[A-Za-z]\w{7,14}$/;
+                    // if(password.value.match(passw)) 
+                    // { 
+                    //     ps.innerHTML = "";
+                    //     return true;
+                    // }
+                    // else
+                    // { 
+                    //     console.log("asdjhasdxahxgZx")
+                    //     ps.innerText == "Please Enter aphabets, Numberss, Special Charactors";
+                    //     return false;
+                    //     console.log("jawsdh")
+                    // }
 
-                    var letters = /^[A-Za-z]+$/;
-                    if(fname.value.match(letters))
-                    {
-                        em.innerHTML =""
-                        return true;
-                    }
-                    else
-                    {
-                        fn.innerHTML = "Please Enter Only Alphabets"
-                        return false;
-                    }
+                    // var letters = /^[A-Za-z]+$/;
+                    // if(fname.value.match(letters))
+                    // {
+                    //     em.innerHTML =""
+                    //     return true;
+                    // }
+                    // else
+                    // {
+                    //     fn.innerHTML = "Please Enter Only Alphabets"
+                    //     return false;
+                    // }
 
                     //console.log("submited");
 
@@ -118,15 +118,15 @@
                     }
 
                     
-                    var passregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-                    if(password.value.match(passregex)){
+                    // var passregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+                    // if(password.value.match(passregex)){
 
-                        ps.innerHTML = "";
-                        return true;
-                    }else{
-                        ps.innerHTML == "Please Enter aphabets, Numberss, Special Charactors";
-                        return false;
-                    }
+                    //     ps.innerHTML = "";
+                    //     return true;
+                    // }else{
+                    //     ps.innerHTML == "Please Enter aphabets, Numberss, Special Charactors";
+                    //     return false;
+                    // }
                    
                 }
 
